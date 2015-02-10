@@ -32,3 +32,5 @@ The site should be up and available at `http://cgi.cs.mcgill.ca/~yourusername`.
     (cd mcbuddy/public; python -m SimpleHTTPServer) &
 
 The site should be up and available at `127.0.0.1:8000`.
+
+###
