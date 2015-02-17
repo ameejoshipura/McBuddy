@@ -9,7 +9,21 @@ class ProfilesController < ApplicationController
     redirect_to @profile
   end
 
+  def index
+  end
+
   def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+
+    if @profile.update(create_profile_params)
+      redirect_to @profile
+    else
+      render 'edit'
+    end
   end
 
   def show
