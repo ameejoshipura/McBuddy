@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'profile/home'
+  get 'profiles/home'
   get 'matching/home'
-  get 'profile/new'
+  get 'profiles/new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
