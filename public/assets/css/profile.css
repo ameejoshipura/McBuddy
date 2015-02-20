@@ -1,0 +1,65 @@
+.clear {
+	clear:both;
+}
+
+.profile {
+	background-color: #FFCCCC;
+	padding: 40px;
+}
+
+.profile div {
+	width: 700px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+
+.profile .name {
+	/*padding: 10px;*/
+	/*background-color: orange;*/
+	background-color: white;
+}
+
+.profile .name img {
+	display: inline;
+	height: 200px;
+	width: 200px;
+	background-color: yellow;
+}
+
+.profile .name p {
+	display: inline;
+	vertical-align: top;
+	margin: 10px;
+	/*color: #777;*/
+	font-size: 3em;
+	/*background-color: red;*/
+}
+
+.profile .section {
+	clear: both;
+	/*background-color: #DDD;*/
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+.profile .section p {
+	padding-left: 10px;
+}
+
+.profile .section .title {
+	font-size: 2em;
+	color: white;
+	padding: #00AAFF;
+}
+
+.profile .section .me {
+	background-color: #FF2211;
+}
+
+.profile .section .courses {
+	background-color: #0055FF;
+}
+
+.profile .section .free-time {
+	background-color: #00FF55;
+}
