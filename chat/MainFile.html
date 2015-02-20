@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+    <head>
+	
+        <title>First iteration of Chat functions</title>
+        <style>
+
+			
+			@media only screen and (max-width : 540px) 
+            {
+                .chat-sidebar {
+                    display: none !important;
+                }
+                
+                .chat-chatBox {
+                    display: none !important;
+                }
+            }
+            
+            .body {
+                background-color: #FF0000;
+            }
+			
+			.head {
+				position: middle;
+				width: 1349px;
+                height: 100%;
+                right: 0px;
+                top: 100px;
+				border: 1px solid rgba(29, 49, 91, .3);
+			}
+            
+            .chat-sidebar {
+                width: 200px;
+                position: fixed;
+                height: 100%;
+                right: 0px;
+                top: 134px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border: 1px solid rgba(29, 49, 91, .3);
+            }
+            
+            .sidebar-name 
+            {
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-bottom: 4px;
+                font-size: 12px;
+				color: white;
+            }
+            
+            .sidebar-name span
+            {
+                padding-left: 5px;
+            }
+            
+            .sidebar-name a
+            {
+                display: block;
+                height: 100%;
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            .sidebar-name:hover
+            {
+                background-color:#e1e2e5;
+            }
+            
+            .sidebar-name img
+            {
+                width: 32px;
+                height: 32px;
+                vertical-align:middle;
+            }
+            </style>
+			<style>
+            .chatBox-box
+            {
+                display: none;
+                position: fixed;
+                bottom: 0px;
+                right: 220px;
+                height: 285px;
+                background-color: rgb(237, 239, 244);
+                width: 300px;
+                border: 1px solid rgba(29, 49, 91, .3);
+            }
+            
+            .chatBox-box .chatBox-head
+            {
+                background-color: 	#660000;
+                padding: 5px;
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+                clear: both;
+            }
+            
+            .chatBox-box .chatBox-head .chatBox-head-left
+            {
+                float: left;
+            }
+            
+            .chatBox-box .chatBox-head .chatBox-head-right
+            {
+                float: right;
+                opacity: 0.5;
+            }
+            
+            .chatBox-box .chatBox-head .chatBox-head-right a
+            {
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            .chatBox-box .chatBox-messages
+            {
+                height: 100%;
+            }
+			.chatBox-box .chatBox-messages div#list {
+				color: #000;
+				overflow: scroll;
+				width: 21.3em;
+				height: 16em;
+				padding: 10px;
+				text-align: left;
+			}
+
+        </style>
+
+        <script>
+		// Author: Philip Hoddinott
+		// Credit to James Robertson | http://www.r0bertson.co.uk for code use
+		//Credit to http://qnimate.com/facebook-style-chat-box-chatBox-using-javascript-and-css/ for code use
+		var newMessage;
+		var total_chatBoxs = 0; //this variable represents the total number of chatBoxs can be displayed according to the viewport width
+		var chatBoxs = [];  //arrays of chatBoxs ids
+		//This works for nine of your freinds.
+		
+		
+		var User = "You"
+		var otherU="Lily Tong";
+		function addText(source) {
+			olist = document.getElementById('list');
+			op = document.createElement('p');
+			//op.innerHTML = 'More text ...';
+			if(source==1){
+				op.innerHTML = User+": "+newMessage;
+			}//end
+			if(source==2){
+				op.innerHTML = otherU+": " +inMessage;
+			}
+			ocontent = document.getElementById('content');
+			ocontent.appendChild(op);
+			olist.scrollTop = olist.scrollHeight;
+		}
+		
+		function enterpressalert(e, sendTxt){
+			var code = (e.keyCode ? e.keyCode : e.which);
+			var s=1;
+			if(code == 13) { //Enter keycode
+				newMessage= document.getElementById("sendTxt").value;
+				addText(s);
+				clearTextBox();
+			}
+			
+		}
+		function clearTextBox() {  
+			document.getElementById('sendTxt').value = "";
+		}
+		
+        Array.remove = function(array, from, to) { //this function can remove a array element.
+        var rest = array.slice((to || from) + 1 || array.length);
+        array.length = from < 0 ? array.length + from : from;
+        return array.push.apply(array, rest);
+        };
+
+        function close_chatBox(id){//this is used to close a chatBox
+            for(var iii = 0; iii < chatBoxs.length; iii++){
+                if(id == chatBoxs[iii]){
+                    Array.remove(chatBoxs, iii);  
+                    document.getElementById(id).style.display = "none";
+                    calculate_chatBoxs();
+                    return;
+                }
+            }   
+        }
+        
+        //displays the chatBoxs. Displays based on the maximum number of chatBoxs that can be displayed on the current viewport width
+        function display_chatBoxs(){
+            var right = 220;
+            var iii = 0;
+            for(iii; iii < total_chatBoxs; iii++) {
+                if(chatBoxs[iii] != undefined){
+                    var element = document.getElementById(chatBoxs[iii]);
+                    element.style.right = right + "px";
+                    right = right + 320;
+                    element.style.display = "block";
+                }
+            }   
+			for(var jjj = iii; jjj < chatBoxs.length; jjj++)
+			{
+				var element = document.getElementById(chatBoxs[jjj]);
+				element.style.display = "none";
+			}
+		}
+		
+		//creates markup for a new chatBox. Adds the id to chatBoxs array.
+		function register_chatBox(id, name){
+			for(var iii = 0; iii < chatBoxs.length; iii++){   
+				//already registered. Bring it to front.
+				if(id == chatBoxs[iii]) {
+					Array.remove(chatBoxs, iii);
+					chatBoxs.unshift(id);
+					calculate_chatBoxs();
+					return;
+				}
+			}               
+			
+			
+			var element = '<div class="chatBox-box chat-chatBox" id="'+ id +'">';
+			element = element + '<div class="chatBox-head">';
+			element = element + '<div class="chatBox-head-left">'+ name +'</div>';
+			element = element + '<div class="chatBox-head-right"><a href="javascript:close_chatBox(\''+ id +'\');">&#10005;</a></div>';
+			element = element + '<div style="clear: both"></div></div><div class="chatBox-messages"> ' 
+			+ '<div id="list"> <div id="content">  <p class="other_user"></p>  </div> </div>'
+			+ '<input name="sendTxt" type="text" maxlength="500" id="sendTxt" class="sendField" size="35" ' 
+			+ 'onKeyPress="enterpressalert(event, this)" id="toolbar">'; 
+			
+			document.getElementsByTagName("body")[0].innerHTML = document.getElementsByTagName("body")[0].innerHTML + element;  
+			chatBoxs.unshift(id);                       
+			calculate_chatBoxs();                
+		}
+		
+		//calculate the total number of chatBoxs suitable and then populate the toatal_chatBoxs variable.
+		function calculate_chatBoxs() {
+			var width = window.innerWidth;
+			if(width < 540){
+				total_chatBoxs = 0;
+			} else {
+				width = width - 200; //320 is width of a single chatBox box
+				total_chatBoxs = parseInt(width/320);
+			}
+			display_chatBoxs();
+		}
+		
+		//recalculate when window is loaded and also when window is resized.
+		window.addEventListener("resize", calculate_chatBoxs);
+		window.addEventListener("load", calculate_chatBoxs);
+		function loadData(){
+			//put stuff here
+		}//end
+            
+        </script>
+	<div class = "head">
+				<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="shortcut icon" href="http://4.bp.blogspot.com/-mz0PyV3kO1A/UA7PdbGm1PI/AAAAAAABVAU/0VEP5NRXXw0/s400/150px-Martlet.svg.png" />
+		<link rel="stylesheet" href="/assets/css/dashboard.css">
+		<title>McBuddy</title>
+	
+		<div class="jumbotron" style="padding-top:0%; margin-top:0%;">
+			<div class="container" style="width:100%; padding-bottom:0%; margin-bottom:0%;height:70px; padding-top:0%; margin-left:0%;">
+				<div style="float:left; padding-left:2%; padding-top:0%; margin-top:0%; margin-left:0%;">
+					<h1 style="margin-top:0%; margin-left:0%;">McBuddy <img src="http://4.bp.blogspot.com/-mz0PyV3kO1A/UA7PdbGm1PI/AAAAAAABVAU/0VEP5NRXXw0/s400/150px-Martlet.svg.png"></h1>
+				</div>
+				<div class="nav pull-right" style="width:20%; margin-right:1%;">
+					<ul class="pull-right"><br>
+						<li class="lang"><a href="#">FRAN&Ccedil;AIS</a></li>
+					</ul>
+				</div>
+				<br><br><br>
+				<nav class="navbar-right" style="margin:0px">
+					<ul class="nav nav-pills red">
+						<li class="active"><a href="home.html">Home</a></li>
+						<li class=""><a href="mybuddies.html">My Buddies</a></li>
+						<li class=""><a href="profile.html">Profile</a></li>
+						<li class=""><a href="messages.html">Messages <span class="badge">3</span></a></li>
+						<li class=""><a href="help.html">Help</a></li>
+						<li class=""><a href="login.html">Sign Out</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="jumbotron msg" style="margin-top:-1.1%; padding-top:100%;background-color:#BC0000; height 50px">
+		
+		</div>
+    </head>	
+
+
+<link type="text/css" rel="stylesheet" media="all" href="css/chat.css" />
+<link type="text/css" rel="stylesheet" media="all" href="css/screen.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/chat.js"></script>
+
+    <body onload = "loadData()">
+        <div class="chat-sidebar">
+            <div class="sidebar-name">
+                <!-- Pass username and display name to register chatBox -->
+                <a onclick ="javascript:chatWith('IDhere')">
+                    <img width="30" height="30"  src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/10009848_10201847106485775_3307154060597567778_n.jpg?oh=6833b3ba6e7c22519da709771ca0e552&oe=55561036&__gda__=1432895049_75b2a6873e466c78f32512dba0cdee2a" />
+                    <span>Philip Hoddinott</span>
+                </a>
+				
+            </div>
+            <div class="sidebar-name">
+                <a onclick ="javascript:chatWith('ID2here')">
+                    <img width="30" height="30" src="https://scontent-a-ord.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10906167_10152747295334081_8456819197532494175_n.jpg?oh=86e5c887ed86b68c3b819de32f3c5af6&oe=5569C272" />
+                    <span>Lily Tong</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_chatBox('Han-Zhao', 'Han Zhao');">
+                    <img width="30" height="30" src="https://scontent-a-ord.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10252119_10154507257725343_5239951316905823068_n.jpg?oh=af651ed5e8340c153310a62a8b69c338&oe=5569EA14" />
+                    <span>Han Zhao</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_chatBox('Carl-Poulin', 'Carl Poulin');">
+                    <img width="30" height="30" src="https://scontent-b-ord.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/576099_308098249261596_1280512880_n.jpg?oh=32f91c4b4e95a9b88729009695a40c31&oe=55637928" />
+                    <span>Carl Poulin</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_chatBox('Amee-Joshipura', 'Amee Joshipura');">
+                    <img width="30" height="30" src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/p720x720/10390041_638987846189874_6955476437522344844_n.jpg?oh=1a3dee77710d45f28770f4f1a7fe2079&oe=554E86FE&__gda__=1430815136_359ca79492f1f81e748f1d1c6ea5e6c0" />
+                    <span>Amee Joshipura</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_chatBox('Chen-Yuechuan', 'Chen Yuechuan');">
+                    <img width="30" height="30" src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/10407241_10152742836563867_6766123126044382083_n.jpg?oh=e254ea4be8235f0381c4f545f9123ed7&oe=55504168&__gda__=1432242711_6236a342e7d6e80109fb87cd18c339b8" />
+                    <span>Chen Yuechuan</span>
+                </a>
+            </div>
+			 <div class="sidebar-name">
+                <a href="javascript:register_chatBox('Ryan-Ordille', 'Ryan Ordille');">
+                    <img width="30" height="30" src="https://scontent-b-ord.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/1378397_10200708614212888_1325395918_n.jpg?oh=330fc39501eb24d58c9b4ac51fc02c9c&oe=5550AF7B" />
+                    <span> Ryan Ordille</span>
+                </a>
+            </div>
+			
+			<div class="sidebar-name">
+                <a href="javascript:register_chatBox('Nathaniel-Faries', 'Nathaniel Faries');">
+                    <img width="30" height="30" src="https://scontent-a-ord.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10426564_608289575946493_7333916659619011563_n.jpg?oh=57bfcf4a457a9dc51f190660777a8f2a&oe=554C8F51" />
+                    <span>Nathaniel Faries</span>
+                </a>
+            </div>
+			
+			<div class="sidebar-name">
+                <a href="javascript:register_chatBox('Nicholas-Aird', 'Nicholas Aird');">
+                    <img width="30" height="30" src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10917830_967954683234446_8973219251588421804_n.jpg?oh=a7e6b6e0ac44d1cf0383b7ac1d7a87d1&oe=5553ECAB&__gda__=1431755283_f83b04e69218a568d2ee3af4a7abee6c" />
+                    <span>Nicholas Aird</span>
+                </a>
+            </div>
+        </div>
+        
+    </body>
+</html>
