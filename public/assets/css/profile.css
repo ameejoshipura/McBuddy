@@ -3,14 +3,14 @@
 }
 
 .profile {
-	background-color: #FFCCCC;
+	
 	padding: 40px;
+	float : left;
+	width : 50% ;
 }
 
-.profile div {
-	width: 700px;
-	margin: auto;
-	margin-bottom: 30px;
+#body{
+	background-color : #a30000;
 }
 
 .profile .name {
@@ -37,7 +37,7 @@
 
 .profile .section {
 	clear: both;
-	/*background-color: #DDD;*/
+	width : 50%;
 	background-color: white;
 	padding-bottom: 10px;
 }
@@ -62,4 +62,33 @@
 
 .profile .section .free-time {
 	background-color: #00FF55;
+}
+
+.profile .tabs {
+	float : right;
+	width: 50%;
+	height : 100%;
+}
+.profile .tab {
+    float:left;
+    display:block;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px 5px 0 0;
+    background:#F9F9F9;
+    color:#777;
+}
+.profile.tab.active,
+.profile.tab:hover {
+	background:#DDD;
+	color:#222;
+}
+.profile.content {
+    display:none;
+    clear:both;
+    background:#FFF;
+    padding:20px;
+}
+.profile .content.active {
+    display:block;
 }

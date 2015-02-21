@@ -1,16 +1,47 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="shortcut icon" href="/assets/img/martletimage.ico" />
 		<link rel="stylesheet" href="/assets/css/dashboard.css">
 		<link rel="stylesheet" href="/assets/css/profile.css">
 		<title>McBuddy</title>
 		<style></style>
+		
+	<style>
+		.tabs {
+			float : right;
+			width: 50%;
+		}
+		.tab {
+		    float:left;
+		    display:block;
+		    padding:10px 20px;
+		    text-decoration:none;
+		    border-radius:5px 5px 0 0;
+		    background:#F9F9F9;
+		    color:#777;
+		}
+		.tab.active,
+		.tab:hover {
+			background:#DDD;
+			color:#222;
+		}
+		.content {
+		    display:none;
+		    clear:both;
+		    background:#FFF;
+		    padding:20px;
+		}
+		.content.active {
+		    display:block;
+		}
+	</style>
 	</head>
-	<body>
+	<body id = "body" >
 		<div class="jumbotron" style="padding-top:0%; margin-top:0%;">
-			<div class="container" style="width:100%; padding-bottom:0%; margin-bottom:0%;height:90px; padding-top:0%; margin-left:0%;">
+			<div class="container" style="width:100%; padding-bottom:10%; margin-bottom:0%;height:90px; padding-top:0%; margin-left:0%;">
 				<div style="float:left; padding-left:2%; padding-top:0%; margin-top:0%; margin-left:0%;">
 					<h1 style="margin-top:0%; margin-left:0%;">McBuddy <img src="/assets/img/martletimage.jpg"></h1>
 				</div>
@@ -40,27 +71,39 @@
 				<img src="/assets/img/profilePicturePotato.png"></img>
 				<p>Person Name</p>
 			</div>
-
-			<div class="section">
-				<p class="title me">ME</p>
-				<p>testing testing testing testing testing testing testing testing
-				testing testing testing testing testing testing testing testing
-				testing testing testing testing testing testing testing testing </p>
-			</div>
-			
-			<div class="section">
-				<p class="title courses">COURSES</p>
-				<p> testing testing testing testing testing testing testing testing
-				testing testing testing testing testing testing testing testing
-				testing testing testing testing testing testing testing testing </p>
-			</div>
-			
-			<div class="section">
-				<p class="title free-time">FREE TIME</p>
-				<p> testing testing testing testing testing testing testing testing
-				testing testing testing testing testing testing testing testing
-				testing testing testing testing testing testing testing testing </p>
-			</div>
 		</div>
+
+
+		<div class=" profile tabs">
+		          <a href="#" data-tab="1" class="tab active">Tab 1</a>
+		          <a href="#" data-tab="2" class="tab">Tab 2</a>
+		          <a href="#" data-tab="3" class="tab">Tab 3</a>
+		
+		          
+		          <div data-content="1" class="content active">
+		          	<div class="section">
+		          		<p class="title courses">COURSES</p>
+		          		<p> insert list </p>
+		          	</div>
+
+		          </div>
+		          <div data-content="2" class="content">
+		          	<div class="section">
+		          		<p class="title me">ME</p>
+		          		<p>Email Phone Little Intro Major gender name </p>
+		          	</div>
+		          </div>
+		          <div data-content="3" class="content">
+		          	<div class="section">
+		          		<p class="title free-time">FREE TIME</p>
+		          		<p> insert timetable here </p>
+		          	</div>
+		          </div>
+		      
+		</div>		
+			
+		<script src="/assets/js/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>');</script>
+		<script src="/assets/js/profile.js"></script>
 	</body>
 </html>
