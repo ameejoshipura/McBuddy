@@ -3,11 +3,6 @@
 }
 
 .profile {
-<<<<<<< HEAD
-	background-color: #BC0000;
-=======
-	
->>>>>>> origin/profile
 	padding: 40px;
 	float : left;
 	width : 50% ;
@@ -68,35 +63,6 @@
 	background-color: #00FF55;
 }
 
-<<<<<<< HEAD
-/* JQuery tutorial
- * http://toddmotto.com/simple-html5-data-attribute-jquery-tabs-markup-free-and-relative-to-their-container-for-ultimate-reuse/
- */
-.tabs {
-
-}
-
-.tabs .tab {
-	display: inline-block;
-	padding: 10px 20px;
-	text-decoration: none;
-	background-color: red;
-}
-
-.tabs .tab.active {
-	display: inline-block;
-	padding: 10px 20px;
-	text-decoration: none;
-	background-color: blue;
-}
-
-.content {
-	display: none;
-}
-
-.content.active {
-	display: block;
-=======
 .profile .tabs {
 	float : right;
 	width: 50%;
@@ -124,5 +90,4 @@
 }
 .profile .content.active {
     display:block;
->>>>>>> origin/profile
 }
