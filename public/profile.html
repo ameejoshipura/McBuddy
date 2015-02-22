@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="shortcut icon" href="/assets/img/martletimage.ico" />
 		<link rel="stylesheet" href="/assets/css/dashboard.css">
 		<link rel="stylesheet" href="/assets/css/profile.css">
@@ -9,7 +10,7 @@
 		<style></style>
 	</head>
 	<body>
-		<div class="jumbotron" style="padding-top:0%; margin-top:0%;">
+<!-- 		<div class="jumbotron" style="padding-top:0%; margin-top:0%;">
 			<div class="container" style="width:100%; padding-bottom:0%; margin-bottom:0%;height:90px; padding-top:0%; margin-left:0%;">
 				<div style="float:left; padding-left:2%; padding-top:0%; margin-top:0%; margin-left:0%;">
 					<h1 style="margin-top:0%; margin-left:0%;">McBuddy <img src="/assets/img/martletimage.jpg"></h1>
@@ -32,16 +33,16 @@
 				</nav>
 			</div>
 		</div>
-		<!-- Clear 'floats' so that the folowing doesn't overlap the menu bar. -->
-		<div class="clear"></div>
+		<div class="clear"></div> -->
 
 		<div class="profile">
 			<div class="name">
 				<img src="/assets/img/profilePicturePotato.png"></img>
-				<p>Person Name</p>
+				Person Name
 			</div>
+			<div class="clear"></div>
 
-			<div class="section">
+<!-- 			<div class="section">
 				<p class="title me">ME</p>
 				<p>testing testing testing testing testing testing testing testing
 				testing testing testing testing testing testing testing testing
@@ -60,7 +61,29 @@
 				<p> testing testing testing testing testing testing testing testing
 				testing testing testing testing testing testing testing testing
 				testing testing testing testing testing testing testing testing </p>
+			</div> -->
+
+			
+			<div class="tabs">
+				<a href=# data-tab="1" class="tab active">Tab 1</a>
+				<a href=# data-tab="2" class="tab ">Tab 2</a>
+				<a href=# data-tab="3" class="tab ">Tab 3</a>
+
+				<div data-content="1" class="content active">Tab 1 content</div>
+				<div data-content="1" class="content">Tab 2 content</div>
+				<div data-content="1" class="content">Tab 3 content</div>
 			</div>
 		</div>
+
+		<script src="/assets/js/jquery.min.js"></script>
+		<script>
+			$(function () {
+				$('[data-tab]').on('click', function (e) {
+					console.log($(this).data('tab'));
+					$(this)
+						.siblings('[data-content=' + $(this).data('tab') + ']');
+				});
+			});
+		</script>
 	</body>
 </html>

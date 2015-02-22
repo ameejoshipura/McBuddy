@@ -3,7 +3,7 @@
 }
 
 .profile {
-	background-color: #FFCCCC;
+	background-color: #BC0000;
 	padding: 40px;
 }
 
@@ -62,4 +62,33 @@
 
 .profile .section .free-time {
 	background-color: #00FF55;
+}
+
+/* JQuery tutorial
+ * http://toddmotto.com/simple-html5-data-attribute-jquery-tabs-markup-free-and-relative-to-their-container-for-ultimate-reuse/
+ */
+.tabs {
+
+}
+
+.tabs .tab {
+	display: inline-block;
+	padding: 10px 20px;
+	text-decoration: none;
+	background-color: red;
+}
+
+.tabs .tab.active {
+	display: inline-block;
+	padding: 10px 20px;
+	text-decoration: none;
+	background-color: blue;
+}
+
+.content {
+	display: none;
+}
+
+.content.active {
+	display: block;
 }
