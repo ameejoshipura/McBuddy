@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(version: 20150217173042) do
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.text     "bio"
+    t.string   "qbid"
+    t.string   "classlist"
+    t.string   "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

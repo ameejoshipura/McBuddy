@@ -4,11 +4,10 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :name
       t.text :bio
 
-      t.string :pid
       t.string :qbid
 
-      t.reference :classlistref
-      t.reference :scheduleref
+      t.string :classlist
+      t.string :schedule
 
       t.timestamps null: false
     end
