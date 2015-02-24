@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217173042) do
+ActiveRecord::Schema.define(version: 20150224172442) do
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "matches", ["profile_id"], name: "index_matches_on_profile_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
