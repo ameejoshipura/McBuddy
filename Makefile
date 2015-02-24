@@ -1,7 +1,5 @@
 RUBY_FILES=$(wildcard **/*.rb)
 
-.PHONY: install,ruby-lint
-
 all: js ruby
 
 js:
