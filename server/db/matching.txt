@@ -11,7 +11,18 @@ schedule (string) - see below
 
 classlist data structure: e.g. "MATH363|COMP360|ECSE428". Classes separated by '|' characters. Any whitespace should be ignored, case insensitive
 
-schedule data structure: e.g. "mae|ma|me|e||a|ae" - corresponds to Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday, and m = morning, a = afternoon, e = evening. So this example has the person available all day Monday, Tuesday morning and afternoon, ..., unavailable Friday, etc.. Again, ignore whitespace, case-insensitive.
+schedule data structure: e.g. m = morning, a = afternoon, e = evening. Ignore whitespace, case-insensitive. stored as json
+
+"{
+	monday : "mae",
+	tuesday : "ma",
+	wednesday : "ma" ,
+	thursday : "" ,
+	friday : "",
+	saterday : "",
+	sunday : "",
+
+}"
 
 Since this is just a prototype, it's safe to assume the strings will be well-formed. If there's a problem, just skip the match.
 
