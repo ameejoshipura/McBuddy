@@ -7,7 +7,9 @@ The following is the proposed DB schema for the matching algorithm:
 ##Table profiles:
 
 `qbid (string)` - unique id used as key, link to associated profile in QB
+
 `classlist (string)` - see below
+
 `schedule (string)` - see below
 
 
