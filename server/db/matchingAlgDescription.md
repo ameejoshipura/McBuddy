@@ -58,12 +58,95 @@ u1 = User.new(1,cl1,s1)
 #uArr : an array of users such as u1
 #"ECSE306" : the class to be matched
 #userList : MatchedResult
-userList = Matcher.match(u1, uArr , "ECSE306")
+userList = Matcher.match(u1, uArr , "COMP302")
 
 #a string of the result in json 
 resultInJson = userList.toJson
 
-# array of matched User excluding the user being searched
-matchedUserArr = userList.getUserList
+```
 
+`resultInJson` contains the **escaped** JSON string, before parsing it as a normal JSON string you will need to **UNESCAPE** it first!!
+
+the result (sample below) contains a "specificMatch" and "generalMatch". 
+
+`specificMatch` : array of user whose schedule and class both matches the target user 
+`generalMatch` : array of user whose schedule may or may not match the user's schedule but is taking the same class
+
+###example output
+
+```json
+{
+    "specificMatch": [
+        {
+            "id": 1,
+            "schedule": {
+                "monday": "mae",
+                "tuesday": "ma",
+                "wednesday": "ma",
+                "thursday": "",
+                "friday": "",
+                "saterday": "",
+                "sunday": ""
+            },
+            "classes": [
+                "ECSE306",
+                "ECSE428",
+                "COMP302",
+                "MATH263"
+            ]
+        },
+        {
+            "id": 3,
+            "schedule": {
+                "monday": "",
+                "tuesday": "",
+                "wednesday": "",
+                "thursday": "",
+                "friday": "ae",
+                "saterday": "",
+                "sunday": ""
+            },
+            "classes": [
+                "COMP302",
+                "COMP202"
+            ]
+        }
+    ],
+    "generalMatch": [
+        {
+            "id": 1,
+            "schedule": {
+                "monday": "mae",
+                "tuesday": "ma",
+                "wednesday": "ma",
+                "thursday": "",
+                "friday": "",
+                "saterday": "",
+                "sunday": ""
+            },
+            "classes": [
+                "ECSE306",
+                "ECSE428",
+                "COMP302",
+                "MATH263"
+            ]
+        },
+        {
+            "id": 3,
+            "schedule": {
+                "monday": "",
+                "tuesday": "",
+                "wednesday": "",
+                "thursday": "",
+                "friday": "ae",
+                "saterday": "",
+                "sunday": ""
+            },
+            "classes": [
+                "COMP302",
+                "COMP202"
+            ]
+        }
+    ]
+}
 ```
