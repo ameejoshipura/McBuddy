@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
+    # TODO: create in QB, and add QBID to @profile
   end
 
   def create
@@ -30,8 +31,15 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def destroy
+    # TODO: check authentication
+    @profile = Profile.find(params[:id])
+    @profile.destroy
+    redirect_to_profiles_path
+  end
+
   private
     def create_profile_params
-      params.require(:profile).permit(:name, :bio)
+      params.require(:profile).permit(:name, :bio, :classlist, :schedule)
     end
 end

@@ -1,10 +1,6 @@
 class MatchingController < ApplicationController
-  def index
-    @matches = Match.all
-  end
-
-  def show
-    matches = match_alg()
+  def home 
+    @matches = Profile.all
   end
 
   private

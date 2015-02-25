@@ -1,1 +1,19 @@
-<h1>Goodbye</h1>
+<h1>Showing all matches:</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>QBID</th>
+        <th>Classlist</th>
+        <th>Schedule</th>
+    </tr>
+
+    <% @matches.each do |match| %>
+        <tr>
+            <td><%= match.name %></td>
+            <td><%= match.qbid %></td>
+            <td><%= match.classlist %></td>
+            <td><%= match.schedule %></td>
+        <tr>
+    <% end %>
+</table>
