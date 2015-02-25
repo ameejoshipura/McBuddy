@@ -14,14 +14,13 @@ classlist data structure: e.g. "MATH363|COMP360|ECSE428". Classes separated by '
 schedule data structure: e.g. m = morning, a = afternoon, e = evening. Ignore whitespace, case-insensitive. stored as json
 
 "{
-	monday : "mae",
-	tuesday : "ma",
-	wednesday : "ma" ,
-	thursday : "" ,
-	friday : "",
-	saterday : "",
-	sunday : "",
-
+    "monday": "mae",
+    "tuesday": "ma",
+    "wednesday": "ma",
+    "thursday": "",
+    "friday": "",
+    "saterday": "",
+    "sunday": ""
 }"
 
 Since this is just a prototype, it's safe to assume the strings will be well-formed. If there's a problem, just skip the match.

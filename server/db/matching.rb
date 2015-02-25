@@ -50,19 +50,11 @@ end
 
 class Schedule
 	def initialize(map)
-		@scheduleMap = map
-	end
-
-	def self.jsonToScheduleMap(json)
-		return Schedule.new(JSON.parse(json))
+		@scheduleMap = JSON.parse(map)
 	end
 
 	def getScheduleMap
 		return @scheduleMap
-	end
-
-	def self.getSampleScheduleJsonStr
-		return '{monday:"mae",tuesday:"ma",wednesday:"ma",thursday:"",friday:"",saterday:"",sunday:"",}'
 	end
 end
 
@@ -70,17 +62,7 @@ end
 class ClassList
 
 	def initialize (map)
-		@classArr = map["classlist"]
-	end
-
-	#convert a json array to a hash table
-	def self.jsonToClassList(jsonString)
-		return ClassList.new(JSON.parse(jsonString))
-	end
-
-	#for testing purpose
-	def self.getSampleJsonStr
-		return '{"classlist":["ECSE306","ECSE428","ECSE321","MATH263"]}'
+		@classArr = JSON.parse(map)["classlist"]
 	end
 
 	def getClassesArray
@@ -92,5 +74,10 @@ cl1 = ClassList.new('{"classlist":["ECSE306","ECSE428","ECSE321","MATH263"]}')
 cl2 = ClassList.new('{"classlist":["ECSE306","ECSE428","COMP302","COMP202"]}')
 cl3 = ClassList.new('{"classlist":["COMP302","COMP202"]}')
 
+puts cl3.getClassesArray
+
+puts (JSON.parse ('{monday:"mae",tuesday:"ma",wednesday:"ma",thursday:"",friday:"",saterday:"",sunday:"",}'))
+
 #TODO implement schedule
-Schedule
+#s1 = Schedule.new('{monday:"mae",tuesday:"ma",wednesday:"ma",thursday:"",friday:"",saterday:"",sunday:"",}')
+#puts s1.getScheduleMap()
