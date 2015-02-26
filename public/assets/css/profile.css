@@ -3,46 +3,63 @@
 }
 
 .profile {
-	padding: 40px;
+	margin: 5px;
 	float : left;
-	width : 50% ;
+	width : 48% ;
+
 }
 
 #body{
 	background-color : #a30000;
 }
 
-.profile .name {
+.profile .description {
 	/*padding: 10px;*/
 	/*background-color: orange;*/
-	background-color: white;
+	
+	
+
+	border-radius: 1em;
+
+overflow:auto;
+background: #F4F4F4;
+
+}
+.profile .name{
+
+	background: #F4F4F4;
+	border-radius: 1em;
+	margin-bottom: 1em;
+	height: 3%;
+	overflow: auto;
+
+}
+.profile .name p{
+	font-size: 2em;
+	padding-left: 10px;
+}
+.profile .description img {
+	
+	float:left;
+
+	padding: 1em;
+	height: 15em;
+	width: 15em;
+
+	
 }
 
-.profile .name img {
-	display: inline;
-	height: 200px;
-	width: 200px;
-	background-color: yellow;
-}
-
-.profile .name p {
-	display: inline;
-	vertical-align: top;
-	margin: 10px;
-	/*color: #777;*/
-	font-size: 3em;
-	/*background-color: red;*/
-}
 
 .profile .section {
+	overflow: hidden;
 	clear: both;
-	width : 50%;
+	max-width : 100%;
 	background-color: white;
-	padding-bottom: 10px;
+	padding-bottom: 1em;
 }
 
 .profile .section p {
-	padding-left: 10px;
+	padding-left: 1em;
 }
 
 .profile .section .title {
@@ -65,7 +82,7 @@
 
 .profile .tabs {
 	float : right;
-	width: 50%;
+	width: 48%;
 	height : 100%;
 }
 .profile .tab {
@@ -73,7 +90,7 @@
     display:block;
     padding:10px 20px;
     text-decoration:none;
-    border-radius:5px 5px 0 0;
+    border-radius: 0.5em 0.5em 0 0;
     background:#F9F9F9;
     color:#777;
 }
@@ -83,11 +100,47 @@
 	color:#222;
 }
 .profile.content {
-    display:none;
+    display:inline;
     clear:both;
+  
     background:#FFF;
-    padding:20px;
+    padding:10px;
+
 }
 .profile .content.active {
     display:block;
+    	border-radius: 0 1em 1em 1em;
+    
+}
+
+.profile table{
+	max-width: 100%
+}
+
+.profile th,td
+{
+
+	margin: 0;
+	text-align: center;
+	border-collapse: collapse;
+	outline: 1px solid #e3e3e3;
+}
+
+.profile td
+{
+	padding: 0.5em 0.5em;
+}
+
+.profile th
+{
+	background: #666;
+	color: white;
+	padding: 0.5em 0.5em;
+}
+
+td:hover
+{
+	
+	background: #666;
+	color: white;
 }
