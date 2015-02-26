@@ -94,19 +94,20 @@ background: #F4F4F4;
     background:#F9F9F9;
     color:#777;
 }
-.profile.tab.active,
-.profile.tab:hover {
+
+.profile .tab.active,
+.profile .tab:hover {
 	background:#DDD;
 	color:#222;
 }
-.content {
+.profile .content {
     display:none;
     clear:both;
     background:#FFF;
     padding:20px;
 
 }
- .content.active {
+.profile .content.active {
     display:block;
     	border-radius: 0 1em 1em 1em;
     
