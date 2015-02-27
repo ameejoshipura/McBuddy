@@ -33,7 +33,7 @@
 }
 
 .profile .description img {
-	float:left;
+	float: left;
 	padding: 1em;
 	height: 15em;
 	width: 15em;
@@ -76,30 +76,33 @@
 }
 
 .profile .tab {
-    float:left;
-    display:block;
-    padding:10px 20px;
-    text-decoration:none;
+    float: left;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
     border-radius: 0.5em 0.5em 0 0;
-    background:#F9F9F9;
-    color:#777;
+    background: #DDD;
+    color: #777;
 }
 
-.profile .tab.active,
+.profile .tab.active {
+	background-color: #F9F9F9;
+	color: #222;
+}
+
 .profile .tab:hover {
-	background:#DDD;
-	color:#222;
+	color: #222;
 }
 
 .profile .content {
-    display:none;
-    clear:both;
-    background:#FFF;
-    padding:20px;
+    display: none;
+    clear: both;
+    background: #FFF;
+    padding: 20px;
 }
 
 .profile .content.active {
-    display:block;
+    display: block;
     border-radius: 0 1em 1em 1em;
 }
 
