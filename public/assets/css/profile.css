@@ -2,29 +2,22 @@
 	clear:both;
 }
 
-.profile {
-	margin: 5px;
-	float : left;
-	width : 48% ;
-
+#body{
+	background-color: #a30000;
 }
 
-#body{
-	background-color : #a30000;
+.profile {
+	margin: 5px;
+	float: left;
+	width: 48% ;
 }
 
 .profile .description {
-	/*padding: 10px;*/
-	/*background-color: orange;*/
-	
-	
-
 	border-radius: 1em;
-
-overflow:auto;
-background: #F4F4F4;
-
+	overflow: auto;
+	background: #F4F4F4;
 }
+
 .profile .name{
 	text-align: center;
 	background: #F4F4F4;
@@ -32,23 +25,19 @@ background: #F4F4F4;
 	margin-bottom: 1em;
 	height: 3%;
 	overflow: auto;
-
 }
+
 .profile .name p{
 	font-size: 2em;
 	padding-left: 10px;
 }
-.profile .description img {
-	
-	float:left;
 
+.profile .description img {
+	float:left;
 	padding: 1em;
 	height: 15em;
 	width: 15em;
-
-	
 }
-
 
 .profile .section {
 	overflow: hidden;
@@ -85,6 +74,7 @@ background: #F4F4F4;
 	width: 50%;
 	height : 100%;
 }
+
 .profile .tab {
     float:left;
     display:block;
@@ -100,51 +90,41 @@ background: #F4F4F4;
 	background:#DDD;
 	color:#222;
 }
+
 .profile .content {
     display:none;
     clear:both;
     background:#FFF;
     padding:20px;
-
 }
+
 .profile .content.active {
     display:block;
-    	border-radius: 0 1em 1em 1em;
-    
+    border-radius: 0 1em 1em 1em;
 }
 
-.profile table{
+.profile table {
 	max-width: 100%
 }
 
-.profile th,td
-{
-
+.profile th,td {
 	margin: 0;
 	text-align: center;
 	border-collapse: collapse;
 	outline: 1px solid #e3e3e3;
 }
 
-.profile td
-{
+.profile td {
 	padding: 0.5em 0.3em;
 }
 
-.profile th
-{
+.profile th {
 	background: #666;
 	color: white;
 	padding: 0.5em 0.3em;
 }
 
-td:hover
-{
-	
+td:hover {
 	background: #666;
 	color: white;
 }
-
-
-
-
