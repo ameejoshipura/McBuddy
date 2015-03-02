@@ -1,0 +1,26 @@
+<%= form_for :profile, method: :post do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio %>
+  </p>
+
+  <p>
+    <%= f.label :classlist %><br>
+    <%= f.text_field :classlist %>
+  </p>
+
+  <p>
+    <%= f.label :schedule %><br>
+    <%= f.text_field :schedule %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
