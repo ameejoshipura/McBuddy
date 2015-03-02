@@ -4,5 +4,4 @@ var QBAPP = {
     authSecret: "AOpwfgLYMzO3X9q",
     publicRoom: 'public',
     debug: true
-}
-
+};
