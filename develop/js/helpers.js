@@ -42,4 +42,4 @@ function alertErrors(err) {
 	alert(JSON.stringify($.parseJSON(err.detail).errors));
 }
 
-var k = function (a) { consol.log(a)}
+var k = function (a) { consol.log(a);};
