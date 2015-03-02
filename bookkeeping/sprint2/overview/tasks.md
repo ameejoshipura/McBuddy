@@ -50,7 +50,7 @@
 | Git               | GT1 - week 1 git maintenance                 | 1 | Nick                      | Feb 11 | Feb 11 | 1 |
 |                   | GT2 - week 2 git maintenance                 | 1 | Nick                      | Feb 16 | Feb 17 | 2 |
 |                   | GT3 - week 3 git maintenance                 | 2 | Nick                      | Feb 24 | Feb 24 | 1 |
-|                   | GT4 - end-of-sprint git cleanup              | 2 | Nick                      |  |  |  |
+|                   | GT4 - end-of-sprint git cleanup              | 2 | Nick                      | Mar 01 | Mar 01 | 2 |
 
 ## Task Allocation
 
@@ -69,11 +69,11 @@ Week definitions:
 | Han       | 13        | 0             | 3              | 13            | 16                  |
 | Lilly     | 11        | 4             | 4              | 1             | 9                   |
 | Nathaniel | 12        | 0             | 7              | 13            | 20                  |
-| Nick      | 15        | 0             | 7              | 5             | 13                  |
+| Nick      | 15        | 0             | 7              | 7             | 15                  |
 | Phil      | 11        | 9             | 0              | 0             | 9                   |
 | Ryan      | 13        | 3             | 4              | 7             | 14                  |
 | Yuechuan  | 12        | 0             | 1              | 11            | 12                  |
-| **TOTAL** | **116**   | **22**        | **38**         | **63**        | **124**             |
+| **TOTAL** | **116**   | **22**        | **38**         | **65**        | **126**             |
 
 
 ## Sprint 2 Meetings
