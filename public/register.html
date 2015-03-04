@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/main3.css">
-	<link rel="shortcut icon" href="assets/img/martletimage.ico" />
-	<title>McBuddy</title>
-</head>
-<body>
-	<div class="jumbotron">
-		<center><div class="container">
-			<h1>McBuddy <img src="/assets/img/mainPageMartlet.png"><h1>
-			<form id="registrationForm" class=".form-horizontal">
-				<div class="details">
-					FULL NAME*<br><input type="text" name="full_name" class=".form-control"></input>
+	<head>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<link rel="stylesheet" href="/assets/css/authforms.css">
+		<link rel="shortcut icon" href="/assets/img/favicon.ico" />
+		<title>Register - McBuddy</title>
+	</head>
+
+	<nav>
+		<a href="register.html">Sign Up</a>
+		<a href="login.html">Log In</a>
+	</nav>
+
+	<body>
+		<div class="container">
+			<h1 id="logo">McBuddy <img src="/assets/img/Martlet-WhiteOnRed.png"></h1>
+			<form id="registrationForm">
+				<div class="input">
+					<label for="full_name">Full name</label>
+					<input type="text" name="full_name" id="full_name"></input>
 				</div>
-				<div class="details">
-					MCGILL EMAIL*<br><input type="email" name="email" class=".form-control"></input>
+				<div class="input">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email"></input>
 				</div>
-				<div class="details">
-					PASSWORD*<br><input type="password" name="password" class=".form-control"></input>
+				<div class="input">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password"></input>
 				</div>
-				<div class="details" style="width:50%;">
-					TODO CONFIRM PASSWORD*<br>
-				</div>
-				<br><font style="font-size:20px; color:#fff;"><input type="submit" value="REGISTER"\></input> 
-				<button>CANCEL</button><br>
+				<input type="submit" id="submit" value="Register"></input>
 			</form>
 		</div>
-	</div>
-	<!-- TODO /assets -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/quickblox.min.js"></script>
-	<script src="assets/js/app.js"></script>
-</body>
+
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/quickblox.min.js"></script>
+	<script src="/assets/js/app.js"></script>
+	</body>
 </html>
