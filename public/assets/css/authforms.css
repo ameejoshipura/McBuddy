@@ -1,0 +1,45 @@
+body {
+	background-image: url("/assets/img/buddies-large.jpg");
+	background-size: cover;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#logo {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.container {
+	text-align: left;
+	color: white;
+	display: inline-block;
+	background-color: #BC0000;
+	opacity: 0.75;
+	width: auto;
+	padding: 2em;
+	margin: 5em;
+	border-radius: 2em;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 1em 3em;
+}
+
+.input {
+	padding: 0.5em;
+}
+
+.input input {
+	display: block;
+	width: 20em;
+}
+
+input[type="submit"] {
+	background-color: transparent;
+	color: white;
+	width: 8em;
+	margin: 1em auto;
+}

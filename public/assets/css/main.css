@@ -1,65 +1,35 @@
-.nav a {
-  color: #5a5a5a;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  text-transform: uppercase;
+body {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.nav li {
-  display: inline;
+nav {
+    overflow: hidden; /* resize nav based on content, including float */
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-right: 10em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+	background-color: white;
 }
 
-.jumbotron {
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position:right;
-  background-color: #BC0000;
-  padding: 0%;
-  margin-left: 0%;
+nav a {
+    float: right;
+    padding: 0em 1em;
+    color: DimGray;
 }
 
-.jumbotron .container {
-  position: relative;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0%;
-  padding-right: 0%;
-  width:100%;
+nav a:link, nav a:visited {
+    text-decoration: none;   
 }
 
-.jumbotron h1 {
-  color: #fff;
-  font-size: 48px;  
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
+nav a:hover, nav a:active {
+    text-decoration: underline;
 }
 
-.jumbotron p {
-  font-size: 20px;
-  color: #fff;
-}
-
-div.image {
-	height:500px;
-	width:60%;
-	float:left;
-	background-image:url('../img/buddy.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	bottom: 50%;
-}
-
-.clear {
-  clear: both;
-}
-
-.buddyChoose {
-  height: 50%;
-  background-color: #FFAAAA;
-}
-
-.buddyDescription {
-  height: 50%;
-  background-color: #AAFFAA;
+img {
+    /* responsive images*/
+    max-height: 100%;
+    max-width: 100%;
 }

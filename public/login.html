@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="/assets/css/main2.css">
-		<link rel="shortcut icon" href="/assets/img/martletimage.ico" />
-		<title>McBuddy</title>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<link rel="stylesheet" href="/assets/css/authforms.css">
+		<link rel="shortcut icon" href="/assets/img/favicon.ico" />
+		<title>Login - McBuddy</title>
 	</head>
+
+	<nav>
+		<a href="register.html">Sign Up</a>
+		<a href="login.html">Log In</a>
+	</nav>
+
 	<body>
-		<div class="jumbotron">
-			<center><div class="container">
-				<h1>McBuddy <img src="/assets/img/mainPageMartlet.png"></h1>
-				<a href="loginfrench.html"><font style="text-decoration:underline;color:white; font-size:12px">Fran&ccedil;ais</a></font></center><br>
-				<form id="loginForm">
-					<center><p>EMAIL<input type="text" name="email" style="text-decoration:"></input>
-					<p><br>PASSWORD<input type="password" name="password"></input></p>
-					<a href="forgotpassword.html"><font style="text-decoration:underline; padding-right:60px; float:right; color:white; font-size:12px">FORGOT PASSWORD?</a></font><br>
-					<br><font style="font-size:20px; color:#fff;"><input style="background-color:transparent;" type="submit" value="LOGIN"></input><br><br>
-					<button style="background-color:transparent;" onclick="location.href='register.html'">REGISTER</font></button><br>
-				</form>
-			</div>
+		<div class="container">
+			<h1 id="logo">McBuddy <img src="/assets/img/Martlet-WhiteOnRed.png"></h1>
+			<form id="loginForm">
+				<div class="input">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email"></input>
+				</div>
+				<div class="input">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password"></input>
+				</div>
+				<input type="submit" id="submit" value="Login"></input>
+			</form>
 		</div>
+
 	<script src="/assets/js/jquery.min.js"></script>
 	<script src="/assets/js/quickblox.min.js"></script>
 	<script src="/assets/js/app.js"></script>
